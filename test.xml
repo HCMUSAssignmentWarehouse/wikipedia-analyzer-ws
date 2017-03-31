@@ -1,0 +1,228 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.10/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.10/ http://www.mediawiki.org/xml/export-0.10.xsd" version="0.10" xml:lang="vi">
+    <siteinfo>
+        <sitename>Wikipedia</sitename>
+        <dbname>viwiki</dbname>
+        <base>https://vi.wikipedia.org/wiki/Trang_Ch%C3%ADnh</base>
+        <generator>MediaWiki 1.29.0-wmf.13</generator>
+        <case>first-letter</case>
+        <namespaces>
+            <namespace key="-2" case="first-letter">Phương tiện</namespace>
+            <namespace key="-1" case="first-letter">Đặc biệt</namespace>
+            <namespace key="0" case="first-letter" />
+            <namespace key="1" case="first-letter">Thảo luận</namespace>
+            <namespace key="2" case="first-letter">Thành viên</namespace>
+            <namespace key="3" case="first-letter">Thảo luận Thành viên</namespace>
+            <namespace key="4" case="first-letter">Wikipedia</namespace>
+            <namespace key="5" case="first-letter">Thảo luận Wikipedia</namespace>
+            <namespace key="6" case="first-letter">Tập tin</namespace>
+            <namespace key="7" case="first-letter">Thảo luận Tập tin</namespace>
+            <namespace key="8" case="first-letter">MediaWiki</namespace>
+            <namespace key="9" case="first-letter">Thảo luận MediaWiki</namespace>
+            <namespace key="10" case="first-letter">Bản mẫu</namespace>
+            <namespace key="11" case="first-letter">Thảo luận Bản mẫu</namespace>
+            <namespace key="12" case="first-letter">Trợ giúp</namespace>
+            <namespace key="13" case="first-letter">Thảo luận Trợ giúp</namespace>
+            <namespace key="14" case="first-letter">Thể loại</namespace>
+            <namespace key="15" case="first-letter">Thảo luận Thể loại</namespace>
+            <namespace key="100" case="first-letter">Chủ đề</namespace>
+            <namespace key="101" case="first-letter">Thảo luận Chủ đề</namespace>
+            <namespace key="828" case="first-letter">Mô đun</namespace>
+            <namespace key="829" case="first-letter">Thảo luận Mô đun</namespace>
+            <namespace key="2300" case="first-letter">Tiện ích</namespace>
+            <namespace key="2301" case="first-letter">Thảo luận Tiện ích</namespace>
+            <namespace key="2302" case="case-sensitive">Định nghĩa tiện ích</namespace>
+            <namespace key="2303" case="case-sensitive">Thảo luận Định nghĩa tiện ích</namespace>
+            <namespace key="2600" case="first-letter">Đề tài</namespace>
+        </namespaces>
+    </siteinfo>
+    <page>
+        <title>Alexandre De Rhodes</title>
+        <ns>0</ns>
+        <id>1</id>
+        <redirect title="Alexandre de Rhodes" />
+        <revision>
+            <id>25321654</id>
+            <parentid>28636</parentid>
+            <timestamp>2016-10-06T15:39:14Z</timestamp>
+            <contributor>
+                <username>Hugopako</username>
+                <id>309098</id>
+            </contributor>
+            <minor />
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+            <text xml:space="preserve">#đổi [[Alexandre de Rhodes]]</text>
+            <sha1>9xki5icc67bbadzv4zj9bayx2e90q0l</sha1>
+        </revision>
+    </page>
+    <page>
+        <title>Trang Chính</title>
+        <ns>0</ns>
+        <id>2</id>
+        <revision>
+            <id>24087716</id>
+            <parentid>24068482</parentid>
+            <timestamp>2016-08-08T02:59:06Z</timestamp>
+            <contributor>
+                <username>Mxn</username>
+                <id>4</id>
+            </contributor>
+            <comment>Sửa các đề mục dư trong trang chính di động (đang sửa đổi trên điện thoại)</comment>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+            <text xml:space="preserve">{| id=&quot;mp-topbanner&quot; style=&quot;width: 100%; margin-top: 2px; background: transparent;&quot;
+| style=&quot;border: 1px solid #CCCCCC; background: #ffffff; vertical-align: top;&quot; | {{Trang Chính/Đầu trang}}
+|}&lt;!-------------------- Bên trái --------------------&gt;
+{| id=&quot;mp-upper&quot; style=&quot;margin-top: 2px; background: none&quot;
+| id=&quot;mp-left&quot; style=&quot;width: 50%; border: 1px solid #d4d4d4; background: #ffffff; vertical-align: top; color: #000000;&quot; |
+{| style=&quot;padding: 2px; width: 100%; vertical-align: top; background: #ffffff&quot;
+! id=&quot;mp-tfa-head&quot; | &lt;div style=&quot;position: absolute; margin-top: -5px; margin-left: 5px;&quot;&gt;[[Tập tin:Emblem-star.svg|40px|link=|alt=]]&lt;/div&gt;&lt;div style=&quot;margin: 0; background: #cedff2; font-family: inherit; font-size: 120%; text-align: left; font-weight: bold; border: 1px solid #5897dd; padding: 0;&quot;&gt;&lt;div id=&quot;mp-tfa-h2&quot; style=&quot;margin-left: 50px;&quot;&gt;[[Wikipedia:Bài viết chọn lọc|&lt;span style=&quot;color: #000000;&quot;&gt;Bài viết chọn lọc&lt;/span&gt;]]&lt;/div&gt;&lt;/div&gt;
+|-
+| id=&quot;mp-tfa&quot; style=&quot;color: #000000; font-size: 100%; padding: 6px;&quot; | {{Trang Chính/Bài viết}}
+|-
+! id=&quot;mp-tfp-head&quot; | &lt;div style=&quot;position: absolute; margin-top: -5px; margin-left: 5px;&quot;&gt;[[Tập tin:Records.svg|40px|link=|alt=]]&lt;/div&gt;&lt;div style=&quot;margin: 0; background: #ccfcf9; font-family: inherit; font-size: 120%; text-align: left; font-weight: bold; border: 1px solid #4ccbc3; padding: 0;&quot;&gt;&lt;div id=&quot;mp-tfp-h2&quot; style=&quot;margin-left: 50px;&quot;&gt;[[Wikipedia:Hình ảnh chọn lọc|&lt;span style=&quot;color: #000000;&quot;&gt;Hình ảnh chọn lọc&lt;/span&gt;]]&lt;/div&gt;&lt;/div&gt;
+|-
+| id=&quot;mp-tfp&quot; style=&quot;color: #000000; font-size: 100%; padding: 6px;&quot; | &lt;div id=&quot;mf-tfp&quot; title=&quot;Hình ảnh chọn lọc&quot;&gt;{{Trang Chính/Hình ảnh}}&lt;/div&gt;
+|-
+! id=&quot;mp-lang-head&quot; | &lt;div style=&quot;position: absolute; margin-top: -5px; margin-left: 5px;&quot;&gt;[[Tập tin:Preferences-desktop-locale-2.svg|40px|link=|alt=]]&lt;/div&gt;&lt;div style=&quot;margin: 0; background: #c7ec9f; font-family: inherit; font-size: 120%; text-align: left; font-weight: bold; border: 1px solid #32cd32; padding: 0;&quot;&gt;&lt;div id=&quot;mp-lang-h2&quot; style=&quot;margin-left: 50px;&quot;&gt;[[Wikipedia:Phiên bản ngôn ngữ|&lt;span style=&quot;color: #000000;&quot;&gt;Wikipedia ngôn ngữ khác&lt;/span&gt;]]&lt;/div&gt;&lt;/div&gt;
+|-
+| id=&quot;mp-lang&quot; style=&quot;color: #000000; font-size: 100%; padding: 6px;&quot; | {{Trang Chính/Các ngôn ngữ|liên wiki=có}}
+|}
+| id=&quot;mp-right&quot; style=&quot;margin-top: 2px; background: none&quot; | &lt;!-------------------- Bên phải --------------------&gt;
+|  style=&quot;width: 50%; border: 1px solid #d4d4d4; background: #FFFFFF; vertical-align: top;&quot; |
+{| style=&quot;width: 100%; padding: 2px; vertical-align: top; background: #FFFFFF&quot;
+! id=&quot;mp-dyk-head&quot; | &lt;div style=&quot;position: absolute; margin-top: -5px; margin-left: 5px;&quot;&gt;[[Tập tin:Help-browser-red.svg|38px|link=|alt=]]&lt;/div&gt;&lt;div style=&quot;margin: 0; background: #f2c3c4; font-family: inherit; font-size: 120%; text-align: left; font-weight: bold; border: 1px solid #e05f62; padding: 0;&quot;&gt;&lt;div id=&quot;mp-dyk-h2&quot; style=&quot;margin-left: 50px;&quot;&gt;[[Wikipedia:Bạn có biết|&lt;span style=&quot;color: #000000;&quot;&gt;Bạn có biết…&lt;/span&gt;]]&lt;/div&gt;&lt;/div&gt;
+|-
+| id=&quot;mp-dyk&quot; style=&quot;color: #000000; font-size: 100%; padding: 6px;&quot; | &lt;div id=&quot;mf-dyk&quot; title=&quot;Bạn có biết&quot;&gt;{{Trang Chính/Bạn có biết}}&lt;/div&gt;
+|-
+! id=&quot;mp-itn-head&quot; | &lt;div style=&quot;position: absolute; margin-top: -5px; margin-left: 5px;&quot;&gt;[[Tập tin:Globe-with-clock.svg|40px|link=|alt=]]&lt;/div&gt;&lt;div style=&quot;margin: 0; background: #ffd6c0; font-family: inherit; font-size: 120%; text-align: left; font-weight: bold; border: 1px solid #e68d5d; padding: 0;&quot;&gt;&lt;div id=&quot;mp-itn-h2&quot; style=&quot;margin-left: 50px;&quot;&gt;[[Chủ đề:Thời sự|&lt;span style=&quot;color: #000000;&quot;&gt;Tin tức&lt;/span&gt;]]&lt;/div&gt;&lt;/div&gt;
+|-
+| id=&quot;mp-itn&quot; style=&quot;color: #000000; font-size: 100%; padding: 6px;&quot; | {{Trang Chính/Tin tức}}
+|-
+! id=&quot;mp-otd-head&quot; | &lt;div style=&quot;position: absolute; margin-top: -8px; margin-left: 4px;&quot;&gt;[[Tập tin:Office-calendar-modified.svg|45px|link=|alt=]]&lt;/div&gt;&lt;div style=&quot;margin: 0; background: #f9f09f; font-family: inherit; font-size: 120%; text-align: left; font-weight: bold; border: 1px solid #daa520; padding: 0;&quot;&gt;&lt;div id=&quot;mp-otd-h2&quot; style=&quot;margin-left: 50px;&quot;&gt;[[Wikipedia:Ngày này năm xưa|&lt;span style=&quot;color: #000000;&quot;&gt;Ngày này năm xưa&lt;/span&gt;]]&lt;/div&gt;&lt;/div&gt;
+|-
+| id=&quot;mp-otd&quot; style=&quot;color: #000000; font-size: 100%; padding: 6px;&quot; | &lt;div id=&quot;mf-otd&quot; title=&quot;Ngày này năm xưa&quot;&gt;{{Trang Chính/Ngày này năm xưa}}&lt;/div&gt;
+|-
+! &lt;div style=&quot;position: absolute; margin-top: -6px; margin-left: 4px;&quot;&gt;[[Tập tin:Gnome-colors-applications-office.svg|44px|link=|alt=]]&lt;/div&gt;&lt;div style=&quot;margin: 0; background: #dbca7e; font-family: inherit; font-size: 120%; text-align: left; font-weight: bold; border: 1px solid #d08d4d; padding: 0;&quot;&gt;&lt;div style=&quot;margin-left: 50px;&quot;&gt;[[Wikipedia:Chủ đề|&lt;span style=&quot;color: #000000;&quot;&gt;Các lĩnh vực&lt;/span&gt;]]&lt;/div&gt;&lt;/div&gt;
+|-
+| style=&quot;color: #000000; font-size: 100%; padding: 6px;&quot; | {{Trang Chính/Các lĩnh vực}}
+|}
+|}&lt;!----------------- Dưới cùng --------------------&gt;
+{| id=&quot;mp-lower&quot; style=&quot;width: 100%; margin-top: 2px; background: none&quot;
+| style=&quot;border: 1px solid #d4d4d4; background: #ffffff; vertical-align: middle; color: #000000;&quot; |
+{| id=&quot;mp-bottom&quot; style=&quot;width: 100%; padding: 2px; vertical-align: top; background: #ffffff&quot;
+|-
+! id=&quot;mp-sister-head&quot; | &lt;div style=&quot;position: absolute; margin-top: -5px; margin-left: 5px;&quot;&gt;[[Tập tin:Wikimedia-logo.svg|37px|link=|alt=]]&lt;/div&gt;&lt;div style=&quot;margin: 0; background: #ccc1f3; font-family: inherit; font-size: 120%; text-align: left;font-weight: bold; border: 1px solid #7b68ee; padding: 0;&quot;&gt;&lt;div id=&quot;mp-sister-h2&quot; style=&quot;margin-left: 46px;&quot;&gt;Dự án liên quan&lt;/div&gt;&lt;/div&gt;
+|-
+| id=&quot;mp-sister&quot; style=&quot;color: #000000; font-size: 100%; padding: 6px;&quot; | {{Trang Chính/Các dự án}}
+|}
+{| style=&quot;height: 50px; width: 100%; margin-top: 2px; background: none;&quot;
+|-
+| style=&quot;width: 100%; border-top: 1px dotted #cccccc; background: #FFFFFF;&quot; |
+{| style=&quot;width: 100%; vertical-align: middle; background: #FFFFFF; text-align: center; color: #000000;&quot;
+|-
+| [[Tập tin:Mail-closed.svg|32px|link=]]&amp;nbsp;&amp;nbsp;[[Wikipedia:Liên lạc|Liên lạc với Wikipedia]]
+|}
+|}
+|}
+__NOTOC__ __NOEDITSECTION__
+{{noexternallanglinks}}
+
+[[Thể loại:Wikipedia]]</text>
+            <sha1>p61odh3h47u8eqer169zaahb5up3tkp</sha1>
+        </revision>
+    </page>
+    <page>
+        <title>Internet Society</title>
+        <ns>0</ns>
+        <id>4</id>
+        <revision>
+            <id>26083472</id>
+            <parentid>26083469</parentid>
+            <timestamp>2016-12-30T16:54:50Z</timestamp>
+            <contributor>
+                <username>P.T.Đ</username>
+                <id>501647</id>
+            </contributor>
+            <minor />
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+            <text xml:space="preserve">{{Hộp thông tin tổ chức
+| tên = Internet Society&lt;br/&gt;ISOC
+| hình = Internet Society logo and wordmark.png
+| cỡ =
+| chú thích = Biểu trưng
+| khung hình =
+| bản đồ =
+| cỡ bản đồ =
+| chú thích bản đồ =
+| tên viết tắt = ISOC
+| khẩu hiệu =
+| formation = 1992
+| giải tán =
+| kiểu =
+| tình trạng = [[Tổ chức phi lợi nhuận|Phi lợi nhuận]]
+| mục đích = Đảm bảo, cổ vũ cho sự phát triển, mở rộng và sử dụng Internet
+| trụ sở = [[Reston, Virginia|Reston]], [[Quận Fairfax, Virginia|Fairfax]], [[Virginia]], [[Hoa Kỳ]]&lt;ref&gt;&lt;/ref&gt;
+| location =
+| khu vực phục vụ = Toàn cầu
+| thành viên = 80.000
+| ngôn ngữ = [[Tiếng Anh|Anh]], [[tiếng Pháp|Pháp]], [[tiếng Ý|Ý]],&lt;br/&gt;[[tiếng Tây Ban Nha|Tây Ban Nha]], [[tiếng Hà Lan|Hà Lan]]
+| tổng thư ký =
+| lãnh đạo = [[Chủ tịch]], [[Tổng giám đốc điều hành#CEO|CEO]]
+| tên lãnh đạo = Bà Lynn St. Amour&lt;ref&gt; Staff and Advisors: Ms. Lynn St Amour, President and CEO]&lt;/ref&gt;
+| người chủ chốt =
+| ngân sách =
+| số nhân viên =
+| trang web = {{URL|www.internetsociety.org}}
+}}
+{{đổi hướng đến đây|ISOC}}
+'''Internet Society''' hay '''ISOC''' là một [[tổ chức quốc tế]] hoạt động [[Tổ chức phi lợi nhuận|phi lợi nhuận]], [[Tổ chức phi chính phủ|phi chính phủ]] và bao gồm các thành viên có trình độ chuyên ngành. Tổ chức này chú trọng đến: [[tiêu chuẩn]], [[giáo dục]] và các vấn đề về [[chính sách]]. Với trên 145 tổ chức thành viên và 65.000 thành viên cá nhân, ISOC bao gồm những con người cụ thể trong [[cộng đồng]] [[Internet]]. Mọi chi tiết có thể tìm thấy tại website của ISOC.
+
+Internet Society nằm ở gần thủ đô Washington, DC, [[Hoa Kỳ]] và [[Genève|Geneva]], [[Thụy Sĩ]]. Số hội viên của nó bao gồm hơn 145 tổ chức thành viên và hơn 65.000 cá nhân. Thành viên còn có thể tự lập một chi nhánh của tổ chức tùy theo vị trí hoặc sở thích. Hiện nay tổ chức có tới 90 chi nhánh trên toàn thế giới.&lt;ref name=&quot;isoc.org&quot;&gt;[http://www.internetsociety.org/who-we-are Who We Are]: Partnerships and Expertise&lt;/ref&gt;
+
+==Nhiệm vụ và mục đích hoạt động==
+Bảo đảm, cổ vũ cho sự phát triển, mở rộng và sử dụng Internet được thuận lợi nhất cho mọi người trên toàn [[thế giới]].
+
+==Xem thêm==
+*[[Internet#Lịch sử Internet|Lịch sử Internet]]
+
+==Tham khảo==
+{{tham khảo|2}}
+==Liên kết ngoài==
+*[http://www.pir.org/ Public Interest Registry]
+
+
+{{Sơ khai}}
+
+
+{{Authority control}}
+
+[[Thể loại:Internet]]
+[[Thể loại:Tổ chức quốc tế]]
+[[Thể loại:Tổ chức phi lợi nhuận]]
+[[Thể loại:Chuẩn Internet]]</text>
+            <sha1>68hx5d8j5hcvf09sx2isrbx7jnsp2mo</sha1>
+        </revision>
+    </page>
+    <page>
+        <title>ISOC Vietnam</title>
+        <ns>0</ns>
+        <id>5</id>
+        <redirect title="Internet Society" />
+        <revision>
+            <id>43751</id>
+            <parentid>28639</parentid>
+            <timestamp>2005-08-03T07:30:41Z</timestamp>
+            <contributor>
+                <username>Mxn</username>
+                <id>4</id>
+            </contributor>
+            <comment>Redirect to [[Internet Society]]</comment>
+            <model>wikitext</model>
+            <format>text/x-wiki</format>
+            <text xml:space="preserve">#redirect [[Internet Society]]</text>
+            <sha1>gvpwq35u9idzo11iavv4gpgyp0vzubj</sha1>
+        </revision>
+    </page>
+</mediawiki>
