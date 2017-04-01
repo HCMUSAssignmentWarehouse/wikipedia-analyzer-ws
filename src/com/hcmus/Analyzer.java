@@ -1,15 +1,9 @@
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.NodeList;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -17,108 +11,127 @@ import java.util.regex.Pattern;
  * Created by Genius Doan on 3/31/2017.
  */
 public class Analyzer {
-    public Analyzer()
-    {
+    private static final Pattern PATTERN_HTTP_LINK = Pattern.compile("http[s]*://(\\w+\\.)*(\\w+)");
+    Map<String, Integer> frequencyMap;
+    private int pageNumber = 0;
+    private String filePath;
+    public Analyzer() {
         //Default
     }
-
-    public Analyzer(String filePath)
-    {
+    public Analyzer(String filePath) {
         this.filePath = filePath;
+        frequencyMap = new HashMap<>();
         initData();
     }
 
-    private List<WordNode> nodeList = new ArrayList<>();
-    private static final Pattern PATTERN_HTTP_LINK = Pattern.compile("http[s]*://(\\w+\\.)*(\\w+)");
-    private int pageNumber = 0;
-    private String filePath;
-
-    private void initData()
-    {
+    private void initData() {
         try {
-            File fXmlFile = new File(filePath);
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(fXmlFile);
-            doc.getDocumentElement().normalize();
-            NodeList nList = doc.getElementsByTagName("page");
-            pageNumber = nList.getLength();
-            for (int i = 0; i < nList.getLength(); i++) {
+            File inputFile = new File(filePath);
+            if (inputFile.exists()) {
+                SAXParserFactory factory = SAXParserFactory.newInstance();
+                SAXParser saxParser = factory.newSAXParser();
 
-                org.w3c.dom.Node nNode = nList.item(i);
-                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
-                    Element eElement = (Element) nNode;
-
-                    String title = eElement.getElementsByTagName("title").item(0).getTextContent();
-                    List<String> titleList = new ArrayList<String>(Arrays.asList(title.split(" ")));
-                    countWord(titleList);
-                    String text = eElement.getElementsByTagName("text").item(0).getTextContent();
-                    String temp = text;
-                    Matcher matcher = PATTERN_HTTP_LINK.matcher(temp);
-                    while (matcher.find()) {
-                        String w = matcher.group();
-                        text = text.replace(w,"");
+                DataHandler dataHandler = new DataHandler();
+                dataHandler.setOnDataLoadedListener(new DataHandler.OnDataLoadedListener() {
+                    @Override
+                    public void onPageNumberCounted(int pageNumber) {
+                        Analyzer.this.pageNumber = pageNumber;
                     }
-                    text = text.replaceAll("__NOTOC__","");
-                    text = text.replaceAll("__NOEDITSECTION__","");
-                    text = text.replaceAll("[0-9]","");
-                    text = text.replaceAll(",<>|'!%@#^&?.…\\-;:\\\"()=\\/*^","");
-                    text = text.replaceAll("#đổi","");
-                    text = text.replaceAll("&amp","");
-                    text = text.replaceAll(">","");
-                    text = text.replaceAll("<","");
-                    text = text.replaceAll("#;\"","");
-                    text = text.replaceAll("==.*==","");
-                    text = text.replaceAll("-","");
-                    //text = text.replaceAll("{.*}","");
-                    text = text.replaceAll("\\[.*\\]\\]","");
-                    List<String> textList = new ArrayList<String>(Arrays.asList(text.split(" ")));
-                    countWord(textList);
 
-                    //System.out.println("title: "+ title + "\n" + "content: " + text);
-                }
+                    @Override
+                    public void onTitleLoaded(String title) {
+                        List<String> titleList = new ArrayList<String>(Arrays.asList(title.split(" ")));
+                        countWord(titleList);
+                    }
+
+                    @Override
+                    public void onTextLoaded(String text) {
+                        String temp = text;
+                        Matcher matcher = PATTERN_HTTP_LINK.matcher(temp);
+                        while (matcher.find()) {
+                            String w = matcher.group();
+                            text = text.replace(w, ""); //Remove old data
+                        }
+
+                        //Normalize data before count frequency
+                        text = normalizeOutputData(text);
+                        List<String> textList = new ArrayList<String>(Arrays.asList(text.split(" ")));
+                        countWord(textList);
+                    }
+                });
+                saxParser.parse(inputFile, dataHandler);
+            } else {
+                System.err.println("Invalid input file! Please double check your file path");
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void countWord(List<String> input){
-        for (int i = 0; i < input.size();i++){
-            boolean check = false;
-            for (int j = 0; j < nodeList.size(); j++){
-                if (input.get(i).equalsIgnoreCase(String.valueOf(nodeList.get(j).getWord()))){
-                    nodeList.get(j).addFrequency();
-                    check = true;
-                    break;
-                }
-            }
+    private String normalizeOutputData(String text) {
+        text = text.replaceAll("__NOTOC__", "");
+        text = text.replaceAll("__NOEDITSECTION__", "");
+        text = text.replaceAll("[0-9]", "");
+        text = text.replaceAll("!", "");
+        text = text.replaceAll("\\\\", " ");
+        text = text.replaceAll("/", " ");
+        text = text.replaceAll("\t", " ");
+        text = text.replaceAll("\n", " ");
+        text = text.replaceAll("[-_:=|,;#]", " ");
+        text = text.replaceAll("\\.", " ");
+        text = text.replaceAll("<.*?>", " "); //Remove html tags
+        text = text.replaceAll("[^\\p{L}\\p{Nd}\\s]+", "");
 
-            if (!check){
-                WordNode temp = new WordNode();
-                temp.setWord(input.get(i));
-                temp.setFrequency(1);
-                nodeList.add(temp);
+        /*
+        text = text.replaceAll(",<>|'!%@#^&?.…\\-;:\\\"()=\\/*^","");
+        text = text.replaceAll("#đổi","");
+        text = text.replaceAll("&amp","");
+        text = text.replaceAll(">","");
+        text = text.replaceAll("<","");
+        text = text.replaceAll("#;\"","");
+        text = text.replaceAll("==.*==","");
+        //text = text.replaceAll("{.*}","");
+        text = text.replaceAll("\\[.*\\]\\]","");
+        */
+
+        return text;
+    }
+
+    public void countWord(List<String> input) {
+        String word;
+        int count;
+        for (int i = 0; i < input.size(); i++) {
+            word = input.get(i);
+
+            if (word != null && !word.isEmpty()) {
+                count = 1;
+                word = word.toLowerCase();
+                if (frequencyMap.containsKey(word)) {
+                    //This word already in the list
+                    count = frequencyMap.get(word) + 1; //Increase the frequency
+                }
+                frequencyMap.put(word, count);
             }
         }
     }
 
-    public void writeToFile(){
+    public void writeToFile() {
         PrintWriter writer = null;
         try {
             writer = new PrintWriter("1412363_1412477.txt");
-            writer.append("Tổng số bài viết: "+ pageNumber +"\n");
+            writer.append("Tổng số bài viết: " + pageNumber + "\n");
             writer.append("Tần suất:\n");
-            for (int i = 0; i < nodeList.size(); i++){
-                writer.append(nodeList.get(i).getWord() + "\t" + nodeList.get(i).getFrequency() + "\n");
-                System.out.println(nodeList.get(i).getWord() + "\t" + nodeList.get(i).getFrequency());
+
+            for (Map.Entry<String, Integer> entry : frequencyMap.entrySet()) {
+                String toWrite = entry.getKey() + "\t" + entry.getValue() + "\n";
+                writer.append(toWrite);
+                System.out.print(toWrite);
             }
+
+            writer.flush();
+            writer.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
-        writer.flush();
-        writer.close();
     }
 }

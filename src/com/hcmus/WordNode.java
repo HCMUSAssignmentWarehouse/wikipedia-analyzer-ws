@@ -1,6 +1,8 @@
 /**
  * Created by Genius Doan on 3/30/2017.
  */
+
+@Deprecated
 public class WordNode {
     String word;
     Integer frequency;
@@ -17,11 +19,11 @@ public class WordNode {
         return frequency;
     }
 
-    public void addFrequency(){
-        frequency ++;
-    }
-
     public void setFrequency(Integer frequency) {
         this.frequency = frequency;
+    }
+
+    public void addFrequency() {
+        frequency++;
     }
 }
