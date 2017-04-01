@@ -1,80 +1,373 @@
-Tổng số bài viết:Tần suất:
-Alexandre	1De	1Rhodes	1Trang	2Chính	1{|	1id="mptopbanner"	1style="width:	8%;	19margintop:	11px;	17background:	15transparent;"
-|	1style="border:	2px	6solid	5#CCCCCC;	2#ffffff;	5verticalalign:	8top;"	2|	17{{Trang	6Chính/Đầu	1trang}}
-|}!	1Bên	2trái	1
-{|	2id="mpupper"	1style="margintop:	2none"
-|	2id="mpleft"	1border:	3#ddd;	3top;	4color:	3	5|
-{|	4style="padding:	1width:	2#ffffff"
-!	2id="mptfahead"	1div	11style="position:	8absolute;	8marginleft:	8px;"/div/div
+Tổng số bài viết: 4
+Tần suất:
+Alexandre	1
+De	1
+Rhodes	1
+Trang	2
+Chính	1
+{|	1
+id="mptopbanner"	1
+style="width:	8
+%;	19
+margintop:	11
+px;	17
+background:	15
+transparent;"
+|	1
+style="border:	2
+px	6
+solid	5
+#CCCCCC;	2
+#ffffff;	5
+verticalalign:	8
+top;"	2
+|	17
+{{Trang	6
+Chính/Đầu	1
+trang}}
+|}!	1
+Bên	2
+trái	1
+
+{|	2
+id="mpupper"	1
+style="margintop:	2
+none"
+|	2
+id="mpleft"	1
+border:	3
+#ddd;	3
+top;	4
+color:	3
+	5
 |
-|	7id="mptfa"	1style="color:	8#;	8fontsize:	9padding:	11px;"	8Chính/Bài	1viết}}
+{|	4
+style="padding:	1
+width:	2
+#ffffff"
+!	2
+id="mptfahead"	1
+div	11
+style="position:	8
+absolute;	8
+marginleft:	8
+px;"/div/div
 |
-!	1id="mptfphead"	1id="mptfp"	1id="mftfp"	1title="Hình	1ảnh	1chọn	1lọc"{{Trang	1Chính/Hình	1ảnh}}/div
+|	7
+id="mptfa"	1
+style="color:	8
+#;	8
+fontsize:	9
+padding:	11
+px;"	8
+Chính/Bài	1
+viết}}
 |
-!	1id="mplanghead"	1id="mplang"	1Chính/Các	3ngôn	2ngữ|liên	1wiki=có}}
+!	1
+id="mptfphead"	1
+id="mptfp"	1
+id="mftfp"	1
+title="Hình	1
+ảnh	1
+chọn	1
+lọc"{{Trang	1
+Chính/Hình	1
+ảnh}}/div
+|
+!	1
+id="mplanghead"	1
+id="mplang"	1
+Chính/Các	3
+ngôn	2
+ngữ|liên	1
+wiki=có}}
 |}
-|	1id="mpright"	1none"	1!	1phải	1
-|	5id="mpdykhead"	1id="mpdyk"	1id="mfdyk"	1title="Bạn	1có	5biết"{{Trang	1Chính/Bạn	1biết}}/div
+|	1
+id="mpright"	1
+none"	1
+!	1
+phải	1
+
+|	5
+id="mpdykhead"	1
+id="mpdyk"	1
+id="mfdyk"	1
+title="Bạn	1
+có	5
+biết"{{Trang	1
+Chính/Bạn	1
+biết}}/div
 |
-!	1id="mpitnhead"	1id="mpitn"	1Chính/Tin	1tức}}
+!	1
+id="mpitnhead"	1
+id="mpitn"	1
+Chính/Tin	1
+tức}}
 |
-!	1id="mpotdhead"	1id="mpotd"	1id="mfotd"	1title="Ngày	1này	2năm	2xưa"{{Trang	1Chính/Ngày	1xưa}}/div
+!	1
+id="mpotdhead"	1
+id="mpotd"	1
+id="mfotd"	1
+title="Ngày	1
+này	2
+năm	2
+xưa"{{Trang	1
+Chính/Ngày	1
+xưa}}/div
 |
-!	1lĩnh	1vực}}
+!	1
+lĩnh	1
+vực}}
 |}
-|}!	1Dưới	1cùng	1id="mplower"	1middle;	2id="mpbottom"	1#ffffff"
+|}!	1
+Dưới	1
+cùng	1
+id="mplower"	1
+middle;	2
+id="mpbottom"	1
+#ffffff"
 |
-!	1id="mpsisterhead"	1px;"/divdiv	1style="margin:	1;	1#cccf;	1fontfamily:	1inherit;	1textalign:	2left;fontweight:	1bold;	1#bee;	1;"div	1id="mpsisterh"	1style="marginleft:	1px;"Dự	1án	1liên	1quan/div/div
-|
-|	1id="mpsister"	1dự	1án}}
-|}
-{|	1style="height:	1none;"
-|
-|	1bordertop:	1dotted	1#FFFFFF;"	1center;	1
+!	1
+id="mpsisterhead"	1
+px;"/divdiv	1
+style="margin:	1
+;	1
+#cccf;	1
+fontfamily:	1
+inherit;	1
+textalign:	2
+left;fontweight:	1
+bold;	1
+#bee;	1
+;"div	1
+id="mpsisterh"	1
+style="marginleft:	1
+px;"Dự	1
+án	1
+liên	1
+quan/div/div
 |
 |	1
+id="mpsister"	1
+dự	1
+án}}
+|}
+{|	1
+style="height:	1
+none;"
+|
+|	1
+bordertop:	1
+dotted	1
+#FFFFFF;"	1
+center;	1
+
+|
+|	1
+
 |}
 |}
 |}
 	1
+
 {{noexternallanglinks}}
 
-	1Internet	4Society	3{{Hộp	1thông	1tin	1tổ	4chức
-|	1tên	3=	14Societybr/ISOC
-|	1hình	2logo	1and	4wordmark.png
-|	1cỡ	2=
-|	13chú	2thích	2Biểu	1trưng
-|	1khung	1bản	3đồ	3viết	1tắt	1ISOC
-|	1khẩu	1hiệu	1formation	1giải	1tán	1kiểu	1tình	1trạng	1mục	1đích	1Đảm	1bảo,	1cổ	2vũ	2cho	3sự	2phát	2triển,	2mở	2rộng	2và	3sử	2dụng	2Internet
-|	1trụ	1sở	2ref/ref
-|	1location	1khu	1vực	1phục	1vụ	1Toàn	3cầu
-|	1thành	3viên	5.
-|	1ngữ	1tổng	1thư	1ký	1lãnh	2đạo	2Bà	1Lynn	2St.	1Amourref	1Staff	1Advisors:	1Ms.	1St	1Amour,	1President	1CEO]/ref
-|	1người	2chủ	1chốt	1ngân	1sách	1số	2nhân	1web	1{{URL|www.internetsociety.org}}
+	1
+Internet	4
+Society	3
+{{Hộp	1
+thông	1
+tin	1
+tổ	4
+chức
+|	1
+tên	3
+=	14
+Societybr/ISOC
+|	1
+hình	2
+logo	1
+and	4
+wordmark.png
+|	1
+cỡ	2
+=
+|	13
+chú	2
+thích	2
+Biểu	1
+trưng
+|	1
+khung	1
+bản	3
+đồ	3
+viết	1
+tắt	1
+ISOC
+|	1
+khẩu	1
+hiệu	1
+formation	1
+giải	1
+tán	1
+kiểu	1
+tình	1
+trạng	1
+mục	1
+đích	1
+Đảm	1
+bảo,	1
+cổ	2
+vũ	2
+cho	3
+sự	2
+phát	2
+triển,	2
+mở	2
+rộng	2
+và	3
+sử	2
+dụng	2
+Internet
+|	1
+trụ	1
+sở	2
+ref/ref
+|	1
+location	1
+khu	1
+vực	1
+phục	1
+vụ	1
+Toàn	3
+cầu
+|	1
+thành	3
+viên	5
+.
+|	1
+ngữ	1
+tổng	1
+thư	1
+ký	1
+lãnh	2
+đạo	2
+Bà	1
+Lynn	2
+St.	1
+Amourref	1
+Staff	1
+Advisors:	1
+Ms.	1
+St	1
+Amour,	1
+President	1
+CEO]/ref
+|	1
+người	2
+chủ	1
+chốt	1
+ngân	1
+sách	1
+số	2
+nhân	1
+web	1
+{{URL|www.internetsociety.org}}
 }}
-{{đổi	1hướng	1đến	1đây|ISOC}}
-'''Internet	1Society'''	1hay	1'''ISOC'''	1là	1một	2.	3Mọi	2chi	3tiết	1thể	2tìm	1thấy	1tại	1website	1của	3ISOC.
+{{đổi	1
+hướng	1
+đến	1
+đây|ISOC}}
+'''Internet	1
+Society'''	1
+hay	1
+'''ISOC'''	1
+là	1
+một	2
+.	3
+Mọi	2
+chi	3
+tiết	1
+thể	2
+tìm	1
+thấy	1
+tại	1
+website	1
+của	3
+ISOC.
 
-Internet	1nằm	1ở	1gần	1thủ	1đô	1Washington,	1DC,	1hội	1nó	1bao	1gồm	1hơn	2chức	3cá	1nhân.	1còn	1tự	1lập	1nhánh	2tùy	1theo	1vị	1trí	1hoặc	1thích.	1Hiện	1nay	1tới	1trên	2thế	1giới.ref	1name="isoc.org"[/whoweare	1Who	1We	1Are]:	1Partnerships	1Expertise/ref
+Internet	1
+nằm	1
+ở	1
+gần	1
+thủ	1
+đô	1
+Washington,	1
+DC,	1
+hội	1
+nó	1
+bao	1
+gồm	1
+hơn	2
+chức	3
+cá	1
+nhân.	1
+còn	1
+tự	1
+lập	1
+nhánh	2
+tùy	1
+theo	1
+vị	1
+trí	1
+hoặc	1
+thích.	1
+Hiện	1
+nay	1
+tới	1
+trên	2
+thế	1
+giới.ref	1
+name="isoc.org"[/whoweare	1
+Who	1
+We	1
+Are]:	1
+Partnerships	1
+Expertise/ref
 
 
-Bảo	1đảm,	1được	1thuận	1lợi	1nhất	1.
+Bảo	1
+đảm,	1
+được	1
+thuận	1
+lợi	1
+nhất	1
+.
 
 
 *
 
 
-{{tham	1khảo|}}
+{{tham	1
+khảo|}}
 
-*[/	1Public	1Interest	1Registry]
-
-
-{{Sơ	1khai}}
-
-
-{{Authority	1control}}
+*[/	1
+Public	1
+Interest	1
+Registry]
 
 
+{{Sơ	1
+khai}}
 
 
-	1ISOC	1Vietnam	1#redirect	1
+{{Authority	1
+control}}
+
+
+
+
+	1
+ISOC	1
+Vietnam	1
+#redirect	1

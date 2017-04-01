@@ -1,46 +1,60 @@
-package com.company;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Main {
+/**
+ * Created by Genius Doan on 3/31/2017.
+ */
+public class Analyzer {
+    public Analyzer()
+    {
+        //Default
+    }
 
-    static List<Word> WordAndFrequencyList = new ArrayList<>();
-    public static String regex = "http[s]*://(\\w+\\.)*(\\w+)";
-    static int fageNumber = 0;
-    public static void main(String[] args) throws IOException {
-        List<String> list;
+    public Analyzer(String filePath)
+    {
+        this.filePath = filePath;
+        initData();
+    }
+
+    private List<WordNode> nodeList = new ArrayList<>();
+    private static final Pattern PATTERN_HTTP_LINK = Pattern.compile("http[s]*://(\\w+\\.)*(\\w+)");
+    private int pageNumber = 0;
+    private String filePath;
+
+    private void initData()
+    {
         try {
-            list = new ArrayList<>();
-            File fXmlFile = new File("test.xml");
+            File fXmlFile = new File(filePath);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(fXmlFile);
             doc.getDocumentElement().normalize();
             NodeList nList = doc.getElementsByTagName("page");
-            fageNumber = nList.getLength();
+            pageNumber = nList.getLength();
             for (int i = 0; i < nList.getLength(); i++) {
 
-                Node nNode = nList.item(i);
-                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+                org.w3c.dom.Node nNode = nList.item(i);
+                if (nNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
                     Element eElement = (Element) nNode;
 
                     String title = eElement.getElementsByTagName("title").item(0).getTextContent();
                     List<String> titleList = new ArrayList<String>(Arrays.asList(title.split(" ")));
-                    CountWord(titleList);
+                    countWord(titleList);
                     String text = eElement.getElementsByTagName("text").item(0).getTextContent();
                     String temp = text;
-                    Pattern pattern = Pattern.compile(regex);
-                    Matcher matcher = pattern.matcher(temp);
+                    Matcher matcher = PATTERN_HTTP_LINK.matcher(temp);
                     while (matcher.find()) {
                         String w = matcher.group();
                         text = text.replace(w,"");
@@ -59,7 +73,7 @@ public class Main {
                     //text = text.replaceAll("{.*}","");
                     text = text.replaceAll("\\[.*\\]\\]","");
                     List<String> textList = new ArrayList<String>(Arrays.asList(text.split(" ")));
-                    CountWord(textList);
+                    countWord(textList);
 
                     //System.out.println("title: "+ title + "\n" + "content: " + text);
                 }
@@ -68,38 +82,37 @@ public class Main {
         catch (Exception e){
             e.printStackTrace();
         }
-        WriteToFile();
     }
 
-    static void CountWord(List<String> input){
+    public void countWord(List<String> input){
         for (int i = 0; i < input.size();i++){
             boolean check = false;
-            for (int j= 0; j < WordAndFrequencyList.size(); j++){
-                if (input.get(i).equalsIgnoreCase(String.valueOf(WordAndFrequencyList.get(j).getWord()))){
-                    WordAndFrequencyList.get(j).addFrequency();
+            for (int j = 0; j < nodeList.size(); j++){
+                if (input.get(i).equalsIgnoreCase(String.valueOf(nodeList.get(j).getWord()))){
+                    nodeList.get(j).addFrequency();
                     check = true;
                     break;
                 }
             }
 
             if (!check){
-                Word temp = new Word();
+                WordNode temp = new WordNode();
                 temp.setWord(input.get(i));
                 temp.setFrequency(1);
-                WordAndFrequencyList.add(temp);
+                nodeList.add(temp);
             }
         }
     }
 
-    static void WriteToFile(){
+    public void writeToFile(){
         PrintWriter writer = null;
         try {
             writer = new PrintWriter("1412363_1412477.txt");
-            writer.append("Tổng số bài viết: "+fageNumber +"\n");
+            writer.append("Tổng số bài viết: "+ pageNumber +"\n");
             writer.append("Tần suất:\n");
-            for (int i = 0; i < WordAndFrequencyList.size();i++){
-                writer.append(WordAndFrequencyList.get(i).getWord() + "\t" + WordAndFrequencyList.get(i).getFrequency() + "\n");
-                System.out.println(WordAndFrequencyList.get(i).getWord() + "\t" + WordAndFrequencyList.get(i).getFrequency());
+            for (int i = 0; i < nodeList.size(); i++){
+                writer.append(nodeList.get(i).getWord() + "\t" + nodeList.get(i).getFrequency() + "\n");
+                System.out.println(nodeList.get(i).getWord() + "\t" + nodeList.get(i).getFrequency());
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -108,35 +121,4 @@ public class Main {
         writer.flush();
         writer.close();
     }
-
-
-  
-
-    static class Word {
-        String word;
-        Integer frequency;
-
-        public String getWord() {
-            return word;
-        }
-
-        public void setWord(String word) {
-            this.word = word;
-        }
-
-        public Integer getFrequency() {
-            return frequency;
-        }
-
-        public void addFrequency(){
-            frequency ++;
-        }
-
-        public void setFrequency(Integer frequency) {
-            this.frequency = frequency;
-        }
-    }
-
-
 }
-
