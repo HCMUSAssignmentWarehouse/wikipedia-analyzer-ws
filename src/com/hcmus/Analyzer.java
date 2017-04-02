@@ -77,7 +77,7 @@ public class Analyzer {
         text = text.replaceAll("/", " ");
         text = text.replaceAll("\t", " ");
         text = text.replaceAll("\n", " ");
-        text = text.replaceAll("[-_:=|,;#]", " ");
+        text = text.replaceAll("[-_:=|,;#!?@$%()+]", " ");
         text = text.replaceAll("\\.", " ");
         text = text.replaceAll("<.*?>", " "); //Remove html tags
         text = text.replaceAll("[^\\p{L}\\p{Nd}\\s]+", "");

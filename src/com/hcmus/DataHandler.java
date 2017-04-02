@@ -8,6 +8,8 @@ import org.xml.sax.helpers.DefaultHandler;
 public class DataHandler extends DefaultHandler {
     boolean isTitle = false;
     boolean isText = false;
+    boolean isNamespace = false;
+    boolean isMainNamespace = true;
     int pageNumber = 0;
     StringBuffer buffer;
     OnDataLoadedListener mListener;
@@ -17,13 +19,16 @@ public class DataHandler extends DefaultHandler {
         //super.startElement(uri, localName, qName, attributes);
         //System.out.println("Start Element :" + qName);
 
-        if (qName.equalsIgnoreCase("page")) {
-            pageNumber++;
-        } else if (qName.equalsIgnoreCase("title")) {
+        if (qName.equalsIgnoreCase("title")) {
             isTitle = true;
         } else if (qName.equalsIgnoreCase("text")) {
             isText = true;
             buffer = new StringBuffer();
+        }
+        else if (qName.equalsIgnoreCase("ns"))
+        {
+            //Get namespace to check
+            isNamespace = true;
         }
     }
 
@@ -31,10 +36,14 @@ public class DataHandler extends DefaultHandler {
     public void endElement(String uri, String localName, String qName) throws SAXException {
         // super.endElement(uri, localName, qName);
         if (qName.equalsIgnoreCase("text")) {
-            if (buffer != null && mListener != null) {
+            if (buffer != null && mListener != null && isMainNamespace) {
                 mListener.onTextLoaded(buffer.toString());
             }
             isText = false;
+            isMainNamespace = false;
+        }
+        if (qName.equalsIgnoreCase("page")) {
+            pageNumber++;
         }
     }
 
@@ -44,12 +53,17 @@ public class DataHandler extends DefaultHandler {
 
         if (isTitle) {
             String title = new String(ch, start, length);
-            if (!title.isEmpty() && mListener != null)
+            if (!title.isEmpty() && mListener != null && isMainNamespace)
                 mListener.onTitleLoaded(title);
             isTitle = false;
+        } else if (isNamespace) {
+            String ns = new String(ch, start, length);
+            isMainNamespace = ns.equals("0");
+            isNamespace = false;
         } else if (isText) {
             buffer.append(ch, start, length);
         }
+
     }
 
     @Override
