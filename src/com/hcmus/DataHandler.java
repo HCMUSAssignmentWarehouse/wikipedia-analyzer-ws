@@ -6,43 +6,44 @@ import org.xml.sax.helpers.DefaultHandler;
  * Created by Genius Doan on 4/2/2017.
  */
 public class DataHandler extends DefaultHandler {
-    boolean isTitle = false;
-    boolean isText = false;
-    boolean isNamespace = false;
-    boolean isMainNamespace = true;
-    int pageNumber = 0;
-    StringBuffer buffer;
-    OnDataLoadedListener mListener;
+    private boolean foundTitle = false;
+    private boolean foundText = false;
+    private boolean foundNS = false;
+    private boolean isChosenNamespace = true;
+    private int pageNumber = 0;
+    private String chosenNS = "0";
+    private StringBuffer buffer;
+    private OnDataLoadedListener mListener;
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         //super.startElement(uri, localName, qName, attributes);
-        //System.out.println("Start Element :" + qName);
-
+        //This called when we starting to read an element
         if (qName.equalsIgnoreCase("title")) {
-            isTitle = true;
+            foundTitle = true;
         } else if (qName.equalsIgnoreCase("text")) {
-            isText = true;
+            foundText = true;
             buffer = new StringBuffer();
-        }
-        else if (qName.equalsIgnoreCase("ns"))
-        {
+        } else if (qName.equalsIgnoreCase("ns")) {
             //Get namespace to check
-            isNamespace = true;
+            foundNS = true;
+            isChosenNamespace = true;
         }
     }
 
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         // super.endElement(uri, localName, qName);
+        //This called in the end of an element
         if (qName.equalsIgnoreCase("text")) {
-            if (buffer != null && mListener != null && isMainNamespace) {
+            //Combine all text
+            if (buffer != null && mListener != null && isChosenNamespace) {
+                //Notify Analyzer to get the text data back
                 mListener.onTextLoaded(buffer.toString());
             }
-            isText = false;
-            isMainNamespace = false;
-        }
-        if (qName.equalsIgnoreCase("page")) {
+            foundText = false;
+        } else if (qName.equalsIgnoreCase("page") && isChosenNamespace) {
+            isChosenNamespace = false;
             pageNumber++;
         }
     }
@@ -51,16 +52,16 @@ public class DataHandler extends DefaultHandler {
     public void characters(char[] ch, int start, int length) throws SAXException {
         //super.characters(ch, start, length);\
 
-        if (isTitle) {
+        if (foundTitle) {
             String title = new String(ch, start, length);
-            if (!title.isEmpty() && mListener != null && isMainNamespace)
+            if (!title.isEmpty() && mListener != null && isChosenNamespace)
                 mListener.onTitleLoaded(title);
-            isTitle = false;
-        } else if (isNamespace) {
-            String ns = new String(ch, start, length);
-            isMainNamespace = ns.equals("0");
-            isNamespace = false;
-        } else if (isText) {
+            foundTitle = false;
+        } else if (foundNS) {
+            String pageNS = new String(ch, start, length);
+            isChosenNamespace = pageNS.equals(chosenNS);
+            foundNS = false;
+        } else if (foundText) {
             buffer.append(ch, start, length);
         }
 
@@ -73,15 +74,19 @@ public class DataHandler extends DefaultHandler {
             mListener.onPageNumberCounted(pageNumber);
     }
 
+    public void setNamespaceString(String mainNS) {
+        this.chosenNS = mainNS;
+    }
+
     public void setOnDataLoadedListener(OnDataLoadedListener listener) {
         mListener = listener;
     }
 
     public interface OnDataLoadedListener {
-        public void onPageNumberCounted(int pageNumber);
+        void onPageNumberCounted(int pageNumber);
 
-        public void onTitleLoaded(String title);
+        void onTitleLoaded(String title);
 
-        public void onTextLoaded(String text);
+        void onTextLoaded(String text);
     }
 }

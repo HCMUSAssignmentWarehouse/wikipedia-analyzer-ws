@@ -10,14 +10,17 @@ import java.util.regex.Pattern;
 /**
  * Created by Genius Doan on 3/31/2017.
  */
+
 public class Analyzer {
     private static final Pattern PATTERN_HTTP_LINK = Pattern.compile("http[s]*://(\\w+\\.)*(\\w+)");
     Map<String, Integer> frequencyMap;
     private int pageNumber = 0;
     private String filePath;
+
     public Analyzer() {
         //Default
     }
+
     public Analyzer(String filePath) {
         this.filePath = filePath;
         frequencyMap = new HashMap<>();
@@ -26,12 +29,15 @@ public class Analyzer {
 
     private void initData() {
         try {
+            System.out.println("Initialize data...");
             File inputFile = new File(filePath);
-            if (inputFile.exists()) {
+            if (inputFile.exists() && inputFile.isFile()) {
+                System.out.println("File found! Preparing SAX Parser...");
                 SAXParserFactory factory = SAXParserFactory.newInstance();
                 SAXParser saxParser = factory.newSAXParser();
 
                 DataHandler dataHandler = new DataHandler();
+                dataHandler.setNamespaceString("0");
                 dataHandler.setOnDataLoadedListener(new DataHandler.OnDataLoadedListener() {
                     @Override
                     public void onPageNumberCounted(int pageNumber) {
@@ -59,6 +65,7 @@ public class Analyzer {
                         countWord(textList);
                     }
                 });
+                System.out.println("XML parsing in progress...");
                 saxParser.parse(inputFile, dataHandler);
             } else {
                 System.err.println("Invalid input file! Please double check your file path");
@@ -72,15 +79,15 @@ public class Analyzer {
         text = text.replaceAll("__NOTOC__", "");
         text = text.replaceAll("__NOEDITSECTION__", "");
         text = text.replaceAll("[0-9]", "");
-        text = text.replaceAll("!", "");
         text = text.replaceAll("\\\\", " ");
+        text = text.replaceAll("\"", " ");
         text = text.replaceAll("/", " ");
         text = text.replaceAll("\t", " ");
         text = text.replaceAll("\n", " ");
-        text = text.replaceAll("[-_:=|,;#!?@$%()+]", " ");
+        text = text.replaceAll("[-_:=|,;#!?@$%+)(]", " "); //replace single character in [...] with " "
         text = text.replaceAll("\\.", " ");
         text = text.replaceAll("<.*?>", " "); //Remove html tags
-        text = text.replaceAll("[^\\p{L}\\p{Nd}\\s]+", "");
+        text = text.replaceAll("[^\\p{L}\\p{Nd}\\s]+", ""); //get only words (unicode supported)
 
         /*
         text = text.replaceAll(",<>|'!%@#^&?.…\\-;:\\\"()=\\/*^","");
@@ -102,7 +109,6 @@ public class Analyzer {
         int count;
         for (int i = 0; i < input.size(); i++) {
             word = input.get(i);
-
             if (word != null && !word.isEmpty()) {
                 count = 1;
                 word = word.toLowerCase();
@@ -115,10 +121,12 @@ public class Analyzer {
         }
     }
 
-    public void writeToFile() {
+    public void writeToFile(String fileName) {
+        System.out.println("Writing output to file: " + fileName + "...");
+        System.out.println();
         PrintWriter writer = null;
         try {
-            writer = new PrintWriter("1412363_1412477.txt");
+            writer = new PrintWriter(fileName);
             writer.append("Tổng số bài viết: " + pageNumber + "\n");
             writer.append("Tần suất:\n");
 
