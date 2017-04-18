@@ -20,6 +20,8 @@ bách khoa, tham khảo tại đây
 
 https://vi.wikipedia.org/wiki/Wikipedia:Kh%C3%B4ng_gian_t%C3%AAn ).
 
+- Bộ dữ liệu của wikipedia dump có hơn 1 300 000 trang. Vì vậy sinh viên cần chú ý vấn đề tràn bộ nhớ và tối ưu thời gian thực thi
+
 - Sinh viên có thể Parse dữ liệu bằng 1 thư viện bất kỳ.
 
 - Kết quả của bài tập phần này là tập tin văn bản <MSSV1_MSSV2>.txt chứa số lượng bài viết,
